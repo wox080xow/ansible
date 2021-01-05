@@ -1,8 +1,9 @@
 - name: pip
-  hosts: all
+  hosts: slaves
+
   tasks:
-    - name: Just get the list from default pip
-      community.general.pip_package_info:  
-    - name: Get the facts for default pip, pip2 and pip3
-      community.general.pip_package_info:
-        clients: ['pip', 'pip2', 'pip3']
+  - name: Install specified python requirements
+    pip:
+      #requirements: requirements.txt
+      name: 
+        - numpy

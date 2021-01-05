@@ -1,0 +1,10 @@
+- name: execute python script
+  hosts: slaves
+
+  tasks:
+    - name: execute install script
+      script: get-pip.py
+      args:
+        executable: python3
+      become: true
+      
