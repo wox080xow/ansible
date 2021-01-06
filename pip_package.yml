@@ -1,9 +1,39 @@
 - name: pip
-  hosts: slaves
+  hosts: spark
 
   tasks:
   - name: Install specified python requirements
     pip:
-      #requirements: requirements.txt
+      #requirements: /home/hadoop/requirementsWithoutVersion
       name: 
-        - numpy
+        #- numpy
+        #- pandas
+        #- scikit-learn
+        #- xgboost
+        #- lightgbm
+        #- fbprophet
+        #- scipy
+        #- matplotlib
+        #- json5
+        #- pyspark
+        #- py4j
+        #- koalas
+        #- pickleshare
+        #- Pillow
+        - async-generator
+        - argon2-cffi
+        - bleach
+        - decorator
+        - dfply
+        - ipykernel
+        - ipython
+        - ipython-genutils
+        - Send2Trash
+        - tqdm
+        - wcwidth
+        - webencodings
+        - xmltodict
+        - jupyter
+        - jupyterlab
+
+

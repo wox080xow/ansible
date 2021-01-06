@@ -1,0 +1,15 @@
+- name: shell
+  hosts: spark
+
+  tasks:
+    - name: shell stdout to file
+      shell: pip freeze | grep pyspark > pipFZ
+      args:
+        executable: /bin/bash
+    - name: shell
+      shell: cat pipFZ
+      args:
+        executable: /bin/bash
+      register: shell_result
+    - debug:
+        var: shell_result.stdout_lines
