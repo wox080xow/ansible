@@ -1,11 +1,21 @@
 - name: cp
-  hosts: hadoop
+  hosts: hdp3
 
   tasks:
-    - name: Copy file with owner and permissions
-      copy:
-        src: /home/hadoop/requirementsWithoutVersion
-        dest: /home/hadoop/requirementsWithoutVersion
-        owner: hadoop
-        group: hadoop
+    - name: Copy file from master
+      #copy:
+      ansible.builtin.copy:
+        src: /home/ansible/hosts
+        dest: /home/ansible/hosts
         mode: '0644'
+
+    - name: Copy file through remote source
+      #copy:
+      ansible.builtin.copy:
+        src: /home/ansible/hosts
+        dest: /etc/hosts
+        owner: root
+        group: root
+        mode: '0644'
+        remote_src: yes
+      become: true

@@ -1,0 +1,13 @@
+- name: apt
+  hosts: hdp3
+
+  #vars_files: 
+    #- slaves_become_pass
+
+  tasks:
+  - name: Update and Upgrade
+    apt:
+      state: present
+      update_cache: yes
+      upgrade: dist
+    become: true
